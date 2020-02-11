@@ -29,7 +29,6 @@ requirements:
 test:
   imports:
     - dependencies
-    - dependencies._checks
     - dependencies.contrib
 
 about:
