@@ -1,8 +1,8 @@
 {% set name = "dependencies" %}
-{% set version = "0.15" %}
+{% set version = "1.0.0" %}
 {% set file_ext = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "f52574a78493aec35d2bd47656b0770c7a0696a515e5f32d163cb83fbc4b5817" %}
+{% set hash_value = "b8dbd7560ac0de0f83ecca19c330235993edc1de63b1745841000a39b60f7ff6" %}
 
 package:
   name: '{{ name|lower }}'
@@ -16,18 +16,19 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install . --no-deps --ignore-installed
+  script: "{{ PYTHON }} -m pip install . --no-deps"
 
 requirements:
   host:
     - pip
+    - poetry
+    - python
   run:
     - python
 
 test:
   imports:
     - dependencies
-    - dependencies._checks
     - dependencies.contrib
 
 about:
