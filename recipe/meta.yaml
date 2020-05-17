@@ -1,22 +1,19 @@
 {% set name = "dependencies" %}
-{% set version = "1.0.0" %}
-{% set file_ext = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash_value = "b8dbd7560ac0de0f83ecca19c330235993edc1de63b1745841000a39b60f7ff6" %}
+{% set version = "2.0.0" %}
 
 package:
-  name: '{{ name|lower }}'
-  version: '{{ version }}'
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.{{ file_ext }}'
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ file_ext }}
-  '{{ hash_type }}': '{{ hash_value }}'
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: eb913abb4044da8664bff19f63ca50154cad36c0aa720bbfb67e131997666679
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps"
+  script: {{ PYTHON }} -m pip install . --no-deps
 
 requirements:
   host:
@@ -35,11 +32,11 @@ about:
   home: https://github.com/dry-python/dependencies
   license: BSD 2-Clause
   license_family: BSD
-  license_file: 'LICENSE'
+  license_file: LICENSE
   summary: Dependency Injection for Humans
-  description: "With help of DI you can use different parts of you system independently and combine their behavior really easy."
-  doc_url: 'http://dependencies.readthedocs.io/en/latest/'
-  dev_url: 'https://github.com/dry-python/dependencies'
+  description: With help of DI you can use different parts of you system independently and combine their behavior really easy.
+  doc_url: http://dependencies.readthedocs.io/en/latest/
+  dev_url: https://github.com/dry-python/dependencies
 
 extra:
   recipe-maintainers:
