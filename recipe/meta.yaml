@@ -26,11 +26,10 @@ requirements:
 test:
   imports:
     - dependencies
-    - dependencies.contrib
 
 about:
   home: https://github.com/dry-python/dependencies
-  license: BSD 2-Clause
+  license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
   summary: Dependency Injection for Humans
