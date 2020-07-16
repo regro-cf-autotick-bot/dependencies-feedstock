@@ -3,9 +3,9 @@ About dependencies
 
 Home: https://github.com/dry-python/dependencies
 
-Package license: BSD 2-Clause
+Package license: BSD-2-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Dependency Injection for Humans
 
